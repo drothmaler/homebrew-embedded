@@ -3,10 +3,10 @@ require 'formula'
 class ArmNoneEabiLinaroGcc < Formula
   homepage 'http://www.linaro.org'
   url 'https://launchpad.net/gcc-linaro/4.8/4.8-2014.01/+download/gcc-linaro-4.8-2014.01.tar.xz'
-  sha1 '35c36518e256faabe92fa454d6ca7d178c971fb1'
+  sha256 '8e997ff0ec835bfd8d23bf5cee77d7fd6080f2de7029fc0a2128c19c8ebd8460'
 
   def install
-    binutils = Formula.factory 'arm-none-eabi-binutils'
+    binutils = Formula['arm-none-eabi-binutils']
 
     ENV['CC'] = 'llvm-gcc'
     ENV['CXX'] = 'llvm-g++'
@@ -16,7 +16,7 @@ class ArmNoneEabiLinaroGcc < Formula
     target = 'arm-none-eabi'
     
     gccbuildpath = buildpath
-    newlib = Formula.factory 'newlib'
+    newlib = Formula['newlib']
     newlib.brew do
         ohai "Moving newlib into GCC build tree"
         system "mv","newlib",gccbuildpath/"newlib"

@@ -11,7 +11,7 @@ class AvrGcc < Formula
   homepage 'http://gcc.gnu.org'
   url 'http://ftpmirror.gnu.org/gcc/gcc-4.8.1/gcc-4.8.1.tar.bz2'
   mirror 'http://ftp.gnu.org/gnu/gcc/gcc-4.8.1/gcc-4.8.1.tar.bz2'
-  sha1 '4e655032cda30e1928fcc3f00962f4238b502169'
+  sha256 '545b44be3ad9f2c4e90e6880f5c9d4f0a8f0e5f67e1ffb0d45da9fa01bb05813'
 
   depends_on 'gmp'
   depends_on 'libmpc'
@@ -29,10 +29,10 @@ class AvrGcc < Formula
 
   def install
 
-    gmp = Formula.factory 'gmp'
-    mpfr = Formula.factory 'mpfr'
-    libmpc = Formula.factory 'libmpc'
-    binutils = Formula.factory 'avr-binutils'
+    gmp = Formula['gmp']
+    mpfr = Formula['mpfr']
+    libmpc = Formula['libmpc']
+    binutils = Formula['avr-binutils']
 
     # brew's build environment is in our way
     ENV.delete 'CFLAGS'

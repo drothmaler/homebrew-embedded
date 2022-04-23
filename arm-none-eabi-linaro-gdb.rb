@@ -3,7 +3,7 @@ require 'formula'
 class ArmNoneEabiLinaroGdb < Formula
   homepage 'http://www.linaro.org'
   url 'https://launchpad.net/gdb-linaro/7.5/7.5-2012.12/+download/gdb-linaro-7.5-2012.12.tar.bz2'
-  sha1 'aba6f78c649e1ea45ca10d8ed2d89f4bcb050353'
+  sha256 '0ef9e001289dbe3a998e3448907593e0d79f3134f74c600ee1a2756b4678345d'
 
 
   def install

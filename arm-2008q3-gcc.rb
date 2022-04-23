@@ -4,7 +4,7 @@ class Arm2008q3Gcc < Formula
   homepage 'http://gcc.gnu.org'
   url 'http://ftpmirror.gnu.org/gcc/gcc-4.3.2/gcc-4.3.2.tar.bz2'
   mirror 'http://ftp.gnu.org/gnu/gcc/gcc-4.3.2/gcc-4.3.2.tar.bz2'
-  sha1 '787b566ad4f386a9896e2d5703e6ff5e7ccaca58'
+  sha256 'bfbf487731ad5dca37efe480a837417de071bd67e685d5c1df6a290707575165'
 
   depends_on 'gmp'
   depends_on 'libmpc'
@@ -12,14 +12,14 @@ class Arm2008q3Gcc < Formula
   depends_on 'arm-2008q3-binutils'
 
   def install
-    binutils = Formula.factory 'arm-2008q3-binutils'
+    binutils = Formula['arm-2008q3-binutils']
 
     ENV['PATH'] += ":#{binutils.prefix/"bin"}"
 	
 	target = 'arm-none-eabi'
 	
 	  gccbuildpath = buildpath
-	  newlib = Formula.factory 'arm-2008q3-newlib'
+	  newlib = Formula['arm-2008q3-newlib']
 	  newlib.brew do
       ohai "Moving newlib into GCC build tree"
 		  system "mv","newlib",gccbuildpath/"newlib"

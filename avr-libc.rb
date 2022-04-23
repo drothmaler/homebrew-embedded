@@ -1,9 +1,9 @@
 require 'formula'
 
 class AvrLibc < Formula
-  url 'http://download.savannah.gnu.org/releases/avr-libc/avr-libc-1.8.0.tar.bz2'
+  url 'http://download.savannah.gnu.org/releases/avr-libc/avr-libc-1.8.1.tar.bz2'
   homepage 'http://www.nongnu.org/avr-libc/'
-  sha256 '67a36bdb43a16f9b0512ba09584d4785f9bce6c057393f1020a5552e096e34ce'
+  sha256 'c3062a481b6b2c6959dc708571c00b0e26301897ba21171ed92acd0af7c4a969'
   head 'svn://svn.sv.gnu.org/avr-libc/trunk/avr-libc/'
 
   depends_on 'avr-gcc'
@@ -26,7 +26,7 @@ class AvrLibc < Formula
 
     system "./bootstrap" if build.head?
 
-    avr_gcc = Formula.factory('avr-gcc')
+    avr_gcc = Formula['avr-gcc']
     build = `./config.guess`.chomp
     system "./configure", "--build=#{build}", "--prefix=#{prefix}", "--host=avr"
     system "make"

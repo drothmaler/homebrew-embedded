@@ -4,7 +4,7 @@ class ArmNoneEabiBinutils < Formula
     homepage 'https://www.gnu.org/software/binutils/'
     url 'http://ftp.gnu.org/gnu/binutils/binutils-2.23.2.tar.bz2'
     mirror 'http://ftpmirror.gnu.org/gnu/binutils/binutils-2.23.2.tar.bz2'
-    sha1 '042c51073205ebaf88c272d6168f9deb71984b56'
+    sha256 'fe914e56fed7a9ec2eb45274b1f2e14b0d8b4f41906a5194eac6883cfe5c1097'
 
     def install
         target = 'arm-none-eabi'
